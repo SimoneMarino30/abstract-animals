@@ -8,10 +8,27 @@ public class Main {
         farm[2] = new Sparrow();
         farm[3] = new Eagle();
 
-        for (Animal a : farm) {
-            a.callSound();
-            a.eat();
-            a.sleep();
+        for (Animal animal : farm) {
+            System.out.println("Animal: " + animal.getClass().getSimpleName());
+            animal.callSound();
+            animal.eat();
+            animal.sleep();
+            if (animal instanceof CanFly) {
+                System.out.print("Flies: ");
+                makeFly((CanFly) animal);
+            }
+            if (animal instanceof CanSwim) {
+                System.out.print("Swims: ");
+                makeSwim((CanSwim) animal);
+            }
         }
+
+    }
+    //METHODS
+    public static void makeFly(CanFly animal) {
+        animal.fly();
+    }
+    public static void makeSwim(CanSwim animal) {
+        animal.swim();
     }
 }

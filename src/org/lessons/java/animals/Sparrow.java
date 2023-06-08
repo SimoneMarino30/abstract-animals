@@ -1,12 +1,18 @@
 package org.lessons.java.animals;
 
-public class Sparrow extends Animal {
+public class Sparrow extends Animal implements CanFly {
     @Override
     public void callSound() {
-        System.out.println("The sparrow's call sound is cip-cip");
+        System.out.println("Call sound: cip-cip");
     }
     @Override
     public void eat() {
-        System.out.println("The sparrow eats insects");
+        System.out.println("Food: insects");
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("I'm flyiiiiiing!!!");
+        System.out.println("-----------------------");
     }
 }
